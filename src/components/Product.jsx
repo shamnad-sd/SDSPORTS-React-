@@ -39,11 +39,11 @@ const Product = ({ product }) => {
                     ))}
                     <span className="ml-2 text-gray-600">({Number(product.rating.rate).toFixed(1)})</span>
                 </div>
-                <p className="text-gray-600 mb-4">${product.price.toFixed(2)}</p>
+                <p className="text-gray-600 mb-4">₹{product.price.toFixed(2)}</p>
                 <p className="text-gray-500 text-sm mb-4 line-clamp-2">{product.description}</p>
                 <button
                     onClick={handleAddToCart}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center transition-colors"
+                    className="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded flex items-center justify-center transition-colors"
                 >
                     <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
                 </button>
