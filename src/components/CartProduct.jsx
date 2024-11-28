@@ -19,7 +19,7 @@ const CartProduct = ({ product }) => {
     return (
         <div className='flex justify-between items-center py-4 border-b'>
             <div className="flex items-center">
-                <img src={product.image} alt={product.title} className="w-20 h-20 object-cover rounded" />
+                <img src={product.images} alt={product.title} className="w-20 h-20 object-cover rounded" />
                 <div className="flex-grow ml-4">
                     <h3 className="font-semibold">{product.title}</h3>
                     <p className="text-gray-600">₹{product.price.toFixed(2)}</p>

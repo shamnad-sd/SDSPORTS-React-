@@ -1,24 +1,55 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Star, ShoppingCart, Eye } from 'lucide-react';
+import { useParams } from 'react-router-dom';
 import { CartContext } from '../Features/ContextProvider';
 
-const Product = ({ product }) => {
-    const { dispatch } = useContext(CartContext);
+const SearchProductDetail = () => {
+  const {dispatch}= useContext(CartContext)
+  const { id } = useParams(); // Get the product ID from the URL
+  const [product, setProduct] = useState(null); // State to store product details
+  const [loading, setLoading] = useState(true); // Loading state
+  const [error, setError] = useState(null); // Error state
 
-    const handleAddToCart = () => {
-        dispatch({
-            type: "Add",
-            product: product
-        });
+  useEffect(() => {
+    const fetchProductDetails = async () => {
+      try {
+        const response = await fetch(`https://dummyjson.com/products/${id}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch product details');
+        }
+        const data = await response.json();
+        setProduct(data); // Set product details in state
+      } catch (error) {
+        setError(error.message); // Set error message
+      } finally {
+        setLoading(false); // Set loading to false
+      }
     };
 
-    // Function to truncate the title
-    const truncateTitle = (title, maxLength) => {
-        return title.length > maxLength ? title.slice(0, maxLength) + '...' : title;
-    };
+    fetchProductDetails();
+  }, [id]); // Re-run effect if ID changes
 
-    return (
-        <div className="bg-white rounded-lg shadow-md overflow-hidden w-80 mt-5 mx-1 px-4"> {/* Set a fixed width and center the card */}
+  if (loading) {
+    return <div>Loading...</div>; // Show loading state
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>; // Show error message
+  }
+
+  const handleAddToCart = () => {
+    dispatch({
+        type: "Add",
+        product: product
+    });
+};
+
+const truncateTitle = (title, maxLength) => {
+  return title.length > maxLength ? title.slice(0, maxLength) + '...' : title;
+};
+  // Render product details
+  return (
+    <div className="bg-white rounded-lg shadow-md overflow-hidden w-80 mt-5 mx-1 px-4"> {/* Set a fixed width and center the card */}
             <div className="relative">
                 <img src={product.images} alt={product.title} className="w-full h-32 object-contain" /> {/* Reduced height to 32 */}
                 <button
@@ -52,7 +83,7 @@ const Product = ({ product }) => {
                 </button>
             </div>
         </div>
-    );
-}
+  );
+};
 
-export default Product;
+export default SearchProductDetail;

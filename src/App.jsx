@@ -5,6 +5,10 @@ import Products from './pages/Products'
 import Footer from './components/Footer'
 import Cart from './pages/Cart'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Banner from './components/Banner'
+import Category from './components/Category/Category'
+import SearchProductDetail from './components/SearchProductDetail'
+
 
 function App() {
 
@@ -13,9 +17,12 @@ function App() {
     <div>
       <BrowserRouter>
         <Navbar />
+        <Banner />
         <Routes>
-          <Route path='/' element={<Products/>} />
-          <Route path='/cart' element={<Cart/>} />
+          <Route path='/' element={<Products />} />
+          <Route path="/product/:id" element={<SearchProductDetail />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/category' element={<Category />} />
         </Routes>
       </BrowserRouter>
       <Footer />
