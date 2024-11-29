@@ -20,7 +20,7 @@ const Product = ({ product }) => {
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden w-80 mt-5 mx-1 px-4"> {/* Set a fixed width and center the card */}
             <div className="relative">
-                <img src={product.images} alt={product.title} className="w-full h-32 object-contain" /> {/* Reduced height to 32 */}
+                <img src={product.thumbnail} alt={product.title} className="w-full h-32 object-contain" /> {/* Reduced height to 32 */}
                 <button
                     className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
                     aria-label="Quick view"
