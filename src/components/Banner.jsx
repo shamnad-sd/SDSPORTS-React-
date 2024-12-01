@@ -3,9 +3,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const Banner = (props) => {
+
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 2000, min: 1024 },
       items: 1,
       slidesToSlide: 1 // optional, default to 1.
     },
@@ -22,12 +23,9 @@ const Banner = (props) => {
   };
 
   const images = [
-    { src: 'https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/f7b74e32c435adb6.jpg?q=20', alt: 'Image 1' },
-    { src: 'https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/dd484f1b19c67712.jpg?q=20', alt: 'Image 2' },
-    { src: 'https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/1316eb53d6f52c71.jpg?q=20', alt: 'Image 3' },
-    { src: 'https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/0511ba08d5abe9aa.jpg?q=20', alt: 'Image 4' },
-    { src: 'https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/a76db078b31108e1.jpeg?q=20', alt: 'Image 5' },
-    { src: 'https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/139e8c93a918366a.jpeg?q=20', alt: 'Image 6' },
+    { src: '/src/assets/BannerImg/img1.png', alt: 'Image 1' },
+    { src: '/src/assets/BannerImg/img2.png', alt: 'Image 2' },
+    { src: '/src/assets/BannerImg/img3.png', alt: 'Image 3' },
   ];
 
   return (
@@ -35,7 +33,6 @@ const Banner = (props) => {
       <Carousel
         swipeable={false}
         draggable={false}
-        showDots={true}
         responsive={responsive}
         ssr={true} // means to render carousel on server-side.
         infinite={true}

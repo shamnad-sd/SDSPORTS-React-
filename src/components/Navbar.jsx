@@ -51,14 +51,14 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="navbar-brand">
-              <span className="text-blue-900 font-extrabold text-2xl">
-                EShop
+              <span className="text-blue-900 font-extrabold text-2xl text-gray-800">
+                <span className="text-yellow-600">SD</span>SPORTS
               </span>
             </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex space-x-4 uppercase">
             <Link
               to="/"
               className="text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-md text-sm font-medium no-underline"
@@ -67,7 +67,7 @@ const Navbar = () => {
             </Link>
             <Link
               to="/shop"
-              className="text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-md text-sm font-medium no-underline"
+              className="text-gray-800  hover:bg-gray-200 px-3 py-2 rounded-md text-sm  font-medium no-underline"
             >
               Shop
             </Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
             >
               Categories
             </Link>
-            <button className="text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-md text-sm font-medium">
+            <button className="text-gray-800 uppercase hover:bg-gray-200 px-3 py-2 rounded-md text-sm font-medium">
               Trending
             </button>
           </div>
@@ -90,14 +90,14 @@ const Navbar = () => {
               value={query}
               onKeyDown={handleKeyDown}
               onChange={handleSearch}
-              className="w-full bg-gray-100 rounded-full py-2 px-6 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full bg-gray-100 rounded-full py-2 px-6 pl-10 focus:outline-none focus:ring-2 focus:ring-gray-800"
             />
             <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
             {showResults && results.length > 0 && (
               <div className="absolute bg-white border rounded-md shadow-lg w-full mt-2 z-10 max-h-64 overflow-y-auto">
                 {results.map((product) => (
                   <Link
-                    to={`/product/${product.id}`}
+                    to={`/product/search/${product.id}`}
                     key={product.id}
                     onClick={() => handleResultClick(product)} // Add click handler
                     className="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
@@ -120,7 +120,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center">
             <Link to="/cart" className="relative">
               <ShoppingCart className="h-6 w-6 text-gray-800" />
-              <span className="absolute -top-2 -right-3 bg-red-500 text-white rounded-full text-xs px-2 py-0.5">
+              <span className="absolute -top-2 -right-3 bg-gray-900 text-white rounded-full text-xs px-2 py-0.5">
                 {cart.length}
               </span>
             </Link>

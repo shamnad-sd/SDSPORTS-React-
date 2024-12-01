@@ -51,7 +51,7 @@ const truncateTitle = (title, maxLength) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden w-80 mt-5 mx-1 px-4"> {/* Set a fixed width and center the card */}
             <div className="relative">
-                <img src={product.images} alt={product.title} className="w-full h-32 object-contain" /> {/* Reduced height to 32 */}
+                <img src={product.thumbnail} alt={product.title} className="w-full h-32 object-contain" /> {/* Reduced height to 32 */}
                 <button
                     className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
                     aria-label="Quick view"
@@ -77,7 +77,7 @@ const truncateTitle = (title, maxLength) => {
                 <p className="text-gray-500 text-sm mb-2 line-clamp-2 text-center">{product.description}</p> {/* Center the description */}
                 <button
                     onClick={handleAddToCart}
-                    className="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded flex items-center justify-center transition-colors"
+                    className="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded flex items-center justify-center transition-colors"
                 >
                     <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
                 </button>

@@ -3,7 +3,7 @@ import { Trash2, Plus, Minus } from 'lucide-react';
 import { CartContext } from '../Features/ContextProvider';
 
 const CartProduct = ({ product }) => {
-    const { cart, dispatch } = useContext(CartContext);
+    const { dispatch } = useContext(CartContext);
     const quantity = product.quantity || 1; // This is now correctly set in the reducer
 
     const Increase = (id) => {
@@ -18,10 +18,10 @@ const CartProduct = ({ product }) => {
 
     return (
         <div className='flex justify-between items-center py-4 border-b'>
-            <div className="flex items-center">
+            <div  className="flex items-center">
                 <img src={product.thumbnail} alt={product.title} className="w-20 h-20 object-cover rounded" />
                 <div className="flex-grow ml-4">
-                    <h3 className="font-semibold">{product.title}</h3>
+                    <h3 className="font-semibold text-sm">{product.title}</h3>
                     <p className="text-gray-600">₹{product.price}</p>
                 </div>
             </div>

@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CategorySelector from './CategorySelector';
 import ProductGrid from './ProductGrid';
 
 const Category = () => {
   const [products, setProducts] = useState([]); // Products for selected category
 
-  const handleCategorySelect = async (category) => {
+  // Function to fetch products based on category
+  const fetchProducts = async (category) => {
     try {
       const response = await fetch(`https://dummyjson.com/products/category/${category}`);
       const data = await response.json();
@@ -13,6 +14,15 @@ const Category = () => {
     } catch (err) {
       console.error("Error fetching products:", err);
     }
+  };
+
+  // Automatically fetch beauty products when the component mounts
+  useEffect(() => {
+    fetchProducts("mens-shoes"); // Fetch beauty products by default
+  }, []);
+
+  const handleCategorySelect = (category) => {
+    fetchProducts(category); // Fetch products for the selected category
   };
 
   return (
