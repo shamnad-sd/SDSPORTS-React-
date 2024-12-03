@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+nav {
+    transition: top 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  }

@@ -17,7 +17,7 @@ const CartProduct = ({ product }) => {
     }
 
     return (
-        <div className='flex justify-between items-center py-4 border-b'>
+        <div className='flex justify-between items-center py-4 border-b mt-4'>
             <div  className="flex items-center">
                 <img src={product.thumbnail} alt={product.title} className="w-20 h-20 object-cover rounded" />
                 <div className="flex-grow ml-4">

@@ -8,9 +8,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Banner from './components/Banner'
 import Category from './components/Category/Category'
 import SearchProductDetail from './components/SearchProductDetail'
-import ProductDetail from './components/ProductDetails'
+
 import ProductDetails from './components/ProductDetails'
-import TextMarquee from './components/TextMarquee'
+
 
 
 function App() {

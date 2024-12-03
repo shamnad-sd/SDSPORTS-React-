@@ -12,13 +12,12 @@ const TextMarquee = () => {
                 </div>
             </Marquee>
             <Marquee direction="right" className='mb-3'>
-                <div className='flex' style={{ width: '100px', height: 'auto', marginRight: '20px' }}>
-
-                    <img className='mr-40' src="/src/assets/Marquee/Screenshot (48).png" alt="" />
-                    <img className='mr-40' src="/src/assets/Marquee/Screenshot (49).png" alt="" />
-                    <img className='mr-40' src="/src/assets/Marquee/Screenshot (50).png" alt="" />
-                    <img className='mr-40' src="/src/assets/Marquee/Screenshot (51).png" alt="" />
-                    <img className='mr-40' src="/src/assets/Marquee/Screenshot (52).png" alt="" />
+                <div className='flex ' style={{ width: '100px', height: 'auto', marginRight: '20px' }}>
+                    <img className='mr-40 rounded-3xl' src="/src/assets/Marquee/Screenshot (48).png" alt="" />
+                    <img className='mr-40 rounded-3xl' src="/src/assets/Marquee/Screenshot (49).png" alt="" />
+                    <img className='mr-40 rounded-3xl' src="/src/assets/Marquee/Screenshot (50).png" alt="" />
+                    <img className='mr-40 rounded-3xl' src="/src/assets/Marquee/Screenshot (51).png" alt="" />
+                    <img className='mr-40 rounded-3xl' src="/src/assets/Marquee/Screenshot (52).png" alt="" />
                 </div>
             </Marquee>
 
